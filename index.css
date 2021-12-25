@@ -1,0 +1,797 @@
+h1 
+	 {
+		font-weight: bold;
+		color: rgb(255, 0, 0);
+		font-size: 32px;
+		position: absolute;
+	  }
+
+html, body {
+	 width: 100%;
+	 height: 100%;
+	 background-color: #ffd9df;
+}
+ * {
+	 position: absolute;
+}
+ *:before, *:after {
+	 content: "";
+	 position: absolute;
+}
+ .container {
+	
+	 width: 450px;
+	 height: 450px;
+	 transform: translate(-50%, -50%);
+	 top: 50%;
+	 left: 50%;
+	 background-color: #99f366;
+	 border-radius: 100%;
+	 overflow: hidden;
+}
+ .shadow {
+	 position: relative;
+	 width: 80%;
+	 height: 20%;
+	 border-radius: 100%;
+	 opacity: 0.1;
+	 background-color: black;
+}
+ .tree-layer {
+	 width: 300px;
+	 height: auto;
+	 transform: translateX(-50%);
+	 left: 50%;
+	 display: flex;
+	 top: -10%;
+}
+ .tree-layer .leaf {
+	 position: relative;
+	 width: 60px;
+	 height: 200px;
+	 background-color: #58b1a1;
+	 border-radius: 200px;
+	 margin: auto -3%;
+	 left: 45px;
+	 top: 10px;
+}
+ .tree-layer .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(1.1);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(1.1);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(1.1);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(1.1);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(1.1);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(1) {
+	 z-index: 3;
+	 animation: dipLayer 3s infinite;
+}
+ .tree-layer:nth-child(1) > .leaf:nth-child(2) {
+	 animation: dipBranch 3s 1.6s infinite;
+}
+ .tree-layer:nth-child(1) > .leaf:nth-child(4) {
+	 animation: dipBranch2 3s 0.5s infinite;
+}
+ .tree-layer:nth-child(2) {
+	 z-index: 3;
+	 animation: dipLayer 3s ease-in-out infinite;
+}
+ .tree-layer:nth-child(2) > .leaf {
+	 background-color: #f1f1f1;
+	 margin: auto -5%;
+	 left: 70px;
+	 top: -50px;
+}
+ .tree-layer:nth-child(2) > .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(0.8);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(2) > .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(0.8);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(2) > .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(0.8);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(2) > .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(0.8);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(2) > .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(0.8);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(3) {
+	 top: 12%;
+	 animation: dipLayer 3s ease-in-out infinite;
+}
+ .tree-layer:nth-child(3) > .leaf {
+	 background-color: #4faa9a;
+}
+ .tree-layer:nth-child(3) > .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(1.5);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(3) > .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(1.5);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(3) > .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(1.5);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(3) > .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(1.5);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(3) > .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(1.5);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(4) {
+	 animation: dipLayer 3s infinite;
+}
+ .tree-layer:nth-child(4) > .leaf {
+	 background-color: #f1f1f1;
+	 margin: auto -5%;
+	 left: 70px;
+	 top: 55px;
+}
+ .tree-layer:nth-child(4) > .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(1.2);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(4) > .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(1.2);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(4) > .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(1.2);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(4) > .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(1.2);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(4) > .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(1.2);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(5) {
+	 z-index: -1;
+}
+ .tree-layer:nth-child(5) > .leaf {
+	 background-color: #f1f1f1;
+	 margin: auto -5%;
+	 left: 70px;
+	 top: 180px;
+}
+ .tree-layer:nth-child(5) > .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(1.5);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(5) > .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(1.5);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(5) > .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(1.5);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(5) > .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(1.5);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(5) > .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(1.5);
+	 box-shadow: inset 0px -10px #d8d8d8;
+}
+ .tree-layer:nth-child(6) {
+	 z-index: -2;
+	 top: 40%;
+}
+ .tree-layer:nth-child(6) > .leaf {
+	 background-color: #4ca394;
+}
+ .tree-layer:nth-child(6) > .leaf:nth-child(1) {
+	 transform: rotate(45deg) scale(1.8);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(6) > .leaf:nth-child(2) {
+	 transform: rotate(22.5deg) scale(1.8);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(6) > .leaf:nth-child(3) {
+	 transform: rotate(0deg) scale(1.8);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(6) > .leaf:nth-child(4) {
+	 transform: rotate(-22.5deg) scale(1.8);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .tree-layer:nth-child(6) > .leaf:nth-child(5) {
+	 transform: rotate(-45deg) scale(1.8);
+	 box-shadow: inset 0px -15px #449284, 0px 15px #3c8074;
+}
+ .ornaments {
+	 width: 100%;
+	 height: 40%;
+	 top: 40%;
+	 z-index: 2;
+}
+ .ornaments .ornament-box {
+	 transform-origin: top;
+	 top: -30px;
+}
+ .ornaments .ornament-box:nth-child(1) {
+	 left: 18%;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament {
+	 z-index: 2;
+	 position: relative;
+	 width: 100px;
+	 height: 100px;
+	 box-shadow: 0px 5px 2px rgba(0, 0, 0, .2);
+	 border-radius: 100%;
+	 border: 1px solid #f50;
+	 background-color: #cd4626;
+	 background-image: radial-gradient(100% 100% at 25% 25%, #f1c0b4, transparent 33%), radial-gradient(15% 15% at 75% 75%, #ffaa80, transparent), radial-gradient(100% 100% at 50% 25%, transparent, #f96 98%);
+	 animation: fall 3s ease-in-out infinite;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament > .face > .eyes {
+	 left: 8px;
+	 animation: removeSmile 3s 0.5s infinite, blink 3s ease-in-out infinite;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament > .face > .smile {
+	 left: 45px;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament > .face > .smile:before, .ornaments .ornament-box:nth-child(1) > .ornament > .face > .smile:after {
+	 width: 10px;
+	 height: 10px;
+	 background-color: pink;
+	 opacity: 0.2;
+	 border-radius: 100%;
+	 top: 15px;
+	 animation: blush 3s infinite;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament > .face > .smile:before {
+	 left: -30px;
+}
+ .ornaments .ornament-box:nth-child(1) > .ornament > .face > .smile:after {
+	 left: 35px;
+}
+ .ornaments .ornament-box:nth-child(1) > .string {
+	 animation: string-stretch 3s ease-in-out infinite;
+}
+ .ornaments .ornament-box:nth-child(2) {
+	 animation: pendulum 3s ease-in-out infinite;
+	 left: 60%;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament {
+	 z-index: 2;
+	 position: relative;
+	 width: 100px;
+	 height: 100px;
+	 border-radius: 100%;
+	 background-color: #fe9e26;
+	 border: 1px solid #ffd500;
+	 box-shadow: 0px 5px 2px rgba(0, 0, 0, .2);
+	 background-image: radial-gradient(100% 115% at 25% 25%, #fff, transparent 33%), radial-gradient(15% 15% at 75% 75%, #ffea80, transparent), radial-gradient(100% 100% at 50% 25%, transparent, #ffe666 98%);
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face > .eyes {
+	 left: -10px;
+	 animation: removeSmile 3s infinite, blink 2s 0.5s ease-in-out infinite;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face > .smile {
+	 left: 28px;
+	 animation: removeSmile 3s infinite;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face .blush {
+	 left: 38px;
+	 top: 40px;
+	 animation: blush 3s infinite;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face .blush:before, .ornaments .ornament-box:nth-child(2) > .ornament > .face .blush:after {
+	 width: 10px;
+	 height: 10px;
+	 background-color: #cd4626;
+	 border-radius: 100%;
+	 top: 15px;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face .blush:before {
+	 left: -30px;
+}
+ .ornaments .ornament-box:nth-child(2) > .ornament > .face .blush:after {
+	 left: 35px;
+}
+ .ornaments .string {
+	 position: relative;
+	 width: 5px;
+	 height: 50px;
+	 border: 2px solid #2a4930;
+	 border-radius: 200px;
+	 transform: perspective(10px) rotateX(5deg);
+	 left: 48px;
+	 transform-origin: top;
+}
+ .ornaments .string:after {
+	 width: 12px;
+	 height: 12px;
+	 background-color: #ff8da1;
+	 top: 60%;
+	 left: -80%;
+}
+ .ornaments .face {
+	 width: 100%;
+	 height: 70%;
+}
+ .ornaments .face .eyes {
+	 display: flex;
+	 justify-content: space-between;
+	 top: 50%;
+}
+ .ornaments .face .eyes:before, .ornaments .face .eyes:after {
+	 position: relative;
+	 width: 20px;
+	 height: 20px;
+	 background-color: #18281a;
+	 background-image: radial-gradient(ellipse 3px 3px at 50% 20%, #fff 99%, transparent), radial-gradient(ellipse 1px 1px at 20% 40%, #fff 99%, transparent);
+	 border-radius: 100%;
+	 margin: 0 15px;
+}
+ .ornaments .face .smile {
+	 width: 20px;
+	 height: 20px;
+	 border-radius: 100%;
+	 border: 3px solid transparent;
+	 border-bottom: 4px solid #18281a;
+	 top: 55%;
+}
+ .lovey-dovey-eyes {
+	 display: flex;
+	 justify-content: space-between;
+	 top: 30px;
+	 left: -10px;
+	 animation: kiss 3s infinite;
+}
+ .lovey-dovey-eyes:before, .lovey-dovey-eyes:after {
+	 position: relative;
+	 width: 20px;
+	 height: 20px;
+	 border-radius: 100%;
+	 border: 5px solid transparent;
+	 border-bottom: 5px solid #18281a;
+	 margin: 0 10px;
+	 top: -10px;
+}
+ .sly-brows {
+	 display: flex;
+	 justify-content: space-between;
+	 top: 30px;
+	 left: -18px;
+	 opacity: 0;
+	 animation: kiss 3s infinite;
+}
+ .sly-brows:before, .sly-brows:after {
+	 position: relative;
+	 width: 20px;
+	 height: 20px;
+	 left: 9px;
+	 top: -25px;
+	 border-radius: 100%;
+	 border: 2px solid transparent;
+	 border-bottom: 2px solid #18281a;
+	 margin: 0 12px;
+}
+ .sly-brows:before {
+	 transform: rotate(-20deg);
+}
+ .sly-brows:after {
+	 transform: rotate(20deg);
+}
+ .shy-brows {
+	 display: flex;
+	 justify-content: space-between;
+	 top: 30px;
+	 left: 3px;
+	 opacity: 0;
+	 animation: kiss 3s 0.5s infinite;
+}
+ .shy-brows:before, .shy-brows:after {
+	 position: relative;
+	 width: 20px;
+	 height: 20px;
+	 left: 9px;
+	 top: -25px;
+	 border-radius: 100%;
+	 border: 2px solid transparent;
+	 border-bottom: 2px solid #18281a;
+	 margin: 0 12px;
+}
+ .shy-brows:before {
+	 transform: rotate(-20deg);
+}
+ .shy-brows:after {
+	 transform: rotate(20deg);
+}
+ .shy-eyes {
+	 display: flex;
+	 justify-content: space-between;
+	 top: 30px;
+	 left: 3px;
+	 opacity: 0;
+	 animation: kiss 3s 0.5s infinite;
+}
+ .shy-eyes:before, .shy-eyes:after {
+	 position: relative;
+	 width: 20px;
+	 height: 20px;
+	 left: 6px;
+	 top: 8px;
+	 border-radius: 100%;
+	 border: 5px solid transparent;
+	 border-top: 5px solid #18281a;
+	 margin: 0 10px;
+}
+ .kiss {
+	 display: flex;
+	 flex-direction: column;
+	 left: 30px;
+	 top: 50px;
+	 animation: kiss 3s infinite;
+}
+ .kiss .lip {
+	 position: relative;
+	 width: 15px;
+	 height: 10px;
+	 border: 1px solid transparent;
+	 border-left: 4px solid #18281a;
+	 border-radius: 100%;
+	 margin-top: -1px;
+}
+ .lights, .lights-2, .lights-3 {
+	 width: 100%;
+	 height: 50px;
+	 top: 20%;
+	 z-index: 3;
+}
+ .lights .cord, .lights-2 .cord, .lights-3 .cord {
+	 width: 73%;
+	 height: 20px;
+	 border-radius: 100%;
+	 border-bottom: 2px solid #50895a;
+	 left: 80px;
+	 transform: rotate(10deg);
+}
+ .lights .cord .light, .lights-2 .cord .light, .lights-3 .cord .light {
+	 width: 10px;
+	 height: 10px;
+	 border-radius: 10px;
+	 animation: flicker 2s linear infinite;
+}
+ .lights .cord .light:nth-child(1), .lights-2 .cord .light:nth-child(1), .lights-3 .cord .light:nth-child(1) {
+	 top: 10px;
+	 left: 0;
+	
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(2), .lights-2 .cord .light:nth-child(2), .lights-3 .cord .light:nth-child(2) {
+	 top: 10.5px;
+	 left: 50px;
+	 
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(3), .lights-2 .cord .light:nth-child(3), .lights-3 .cord .light:nth-child(3) {
+	 top: 11px;
+	 left: 100px;
+	 
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(4), .lights-2 .cord .light:nth-child(4), .lights-3 .cord .light:nth-child(4) {
+	 top: 11.5px;
+	 left: 150px;
+	
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(5), .lights-2 .cord .light:nth-child(5), .lights-3 .cord .light:nth-child(5) {
+	 top: 12px;
+	 left: 200px;
+	
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(6), .lights-2 .cord .light:nth-child(6), .lights-3 .cord .light:nth-child(6) {
+	 top: 12.5px;
+	 left: 250px;
+	 
+	 box-shadow: 0px 0px 10px ;
+}
+ .lights .cord .light:nth-child(7), .lights-2 .cord .light:nth-child(7), .lights-3 .cord .light:nth-child(7) {
+	 top: 13px;
+	 left: 300px;
+	
+	 box-shadow: 0px 0px 10px ;
+}
+ .dip {
+	 animation: dipLayer 3s infinite;
+	 left: 50%;
+}
+ .lights-2 {
+	 top: 55%;
+	 width: 125%;
+	 left: 45%;
+	 z-index: 1;
+}
+ .lights-2 > .cord {
+	 transform: rotate(-185deg);
+}
+ .lights-2.dip {
+	 animation: dipLayer 3s 0.3s infinite;
+	 left: 45%;
+}
+ .lights-3 {
+	 top: 80%;
+	 width: 110%;
+	 left: -10px;
+}
+ .lights-3 > .cord {
+	 transform: rotate(-8deg);
+}
+ .tear {
+	 position: absolute;
+	 width: 15px;
+	 height: 15px;
+	 border-radius: 0 50% 50% 50%;
+	 background: #77e0ee;
+	 top: 10px;
+	 z-index: 6;
+	 left: 9px;
+	 opacity: 0;
+	 transform: rotate(50deg);
+	 animation: sweat 3s infinite 2.5s;
+}
+ @keyframes sweat {
+	 from {
+		 opacity: 1;
+		 transform: translateY(0px) rotate(50deg);
+	}
+	 to {
+		 opacity: 0;
+		 transform: translateY(50px) rotate(50deg);
+	}
+}
+ @keyframes pendulum {
+	 0% {
+		 transform: rotate(20deg);
+	}
+	 50% {
+		 transform: rotate(-20deg);
+	}
+	 100% {
+		 transform: rotate(20deg);
+	}
+}
+ @keyframes dipBranch {
+	 50% {
+		 transform: rotate(20deg) scale(1.1);
+	}
+}
+ @keyframes dipBranch2 {
+	 50% {
+		 transform: rotate(-30deg) scale(1.05);
+	}
+}
+ @keyframes dipLayer {
+	 0% {
+		 transform: translate(-50%, 3px);
+	}
+	 50% {
+		 transform: translate(-50%, -3px);
+	}
+	 100% {
+		 transform: translate(-50%, 3px);
+	}
+}
+ @keyframes kiss {
+	 0% {
+		 opacity: 0;
+	}
+	 49% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 1;
+	}
+	 99% {
+		 opacity: 1;
+	}
+	 100% {
+		 opacity: 0;
+	}
+}
+ @keyframes removeSmile {
+	 0% {
+		 opacity: 1;
+	}
+	 49% {
+		 opacity: 1;
+	}
+	 50% {
+		 opacity: 0;
+	}
+	 99% {
+		 opacity: 0;
+	}
+	 100% {
+		 opacity: 1;
+	}
+}
+ @keyframes string-stretch {
+	 0% {
+		 transform: perspective(10px) rotateX(5deg) scaleY(1.2);
+	}
+	 50% {
+		 transform: perspective(10px) rotateX(5deg) scaleY(1);
+	}
+	 100% {
+		 transform: perspective(10px) rotateX(5deg) scaleY(1.2);
+	}
+}
+ @keyframes fall {
+	 0% {
+		 transform: translateY(15px);
+	}
+	 50% {
+		 transform: translateY(0px);
+	}
+	 100% {
+		 transform: translateY(15px);
+	}
+}
+ @keyframes blush {
+	 0% {
+		 opacity: 1;
+	}
+	 50% {
+		 opacity: 0.2;
+	}
+	 100% {
+		 opacity: 1;
+	}
+}
+ @keyframes blink {
+	 0% {
+		 transform: scaleY(1);
+	}
+	 18% {
+		 transform: scaleY(1);
+	}
+	 20% {
+		 transform: scaleY(0);
+	}
+	 25% {
+		 transform: scaleY(1);
+	}
+	 38% {
+		 transform: scaleY(1);
+	}
+	 40% {
+		 transform: scaleY(0);
+	}
+	 45% {
+		 transform: scaleY(1);
+	}
+	 80% {
+		 transform: scaleY(1);
+	}
+}
+ @keyframes flicker {
+	 from {
+		 opacity: 1;
+	}
+	 4% {
+		 opacity: 0.9;
+	}
+	 6% {
+		 opacity: 0.85;
+	}
+	 8% {
+		 opacity: 0.95;
+	}
+	 10% {
+		 opacity: 0.9;
+	}
+	 11% {
+		 opacity: 0.922;
+	}
+	 12% {
+		 opacity: 0.9;
+	}
+	 14% {
+		 opacity: 0.95;
+	}
+	 16% {
+		 opacity: 0.98;
+	}
+	 17% {
+		 opacity: 0.9;
+	}
+	 19% {
+		 opacity: 0.93;
+	}
+	 20% {
+		 opacity: 0.99;
+	}
+	 24% {
+		 opacity: 1;
+	}
+	 26% {
+		 opacity: 0.94;
+	}
+	 28% {
+		 opacity: 0.98;
+	}
+	 37% {
+		 opacity: 0.93;
+	}
+	 38% {
+		 opacity: 0.5;
+	}
+	 39% {
+		 opacity: 0.96;
+	}
+	 42% {
+		 opacity: 1;
+	}
+	 44% {
+		 opacity: 0.97;
+	}
+	 46% {
+		 opacity: 0.94;
+	}
+	 56% {
+		 opacity: 0.9;
+	}
+	 58% {
+		 opacity: 0.9;
+	}
+	 60% {
+		 opacity: 0.99;
+	}
+	 68% {
+		 opacity: 1;
+	}
+	 70% {
+		 opacity: 0.9;
+	}
+	 72% {
+		 opacity: 0.95;
+	}
+	 93% {
+		 opacity: 0.93;
+	}
+	 95% {
+		 opacity: 0.95;
+	}
+	 97% {
+		 opacity: 0.93;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ 
+ 
